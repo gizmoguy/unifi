@@ -4,13 +4,13 @@ VOLUME ["/var/lib/unifi"]
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo "deb http://www.ubnt.com/downloads/unifi/distros/deb/debian ubuntu ubiquiti" \
-  > /etc/apt/sources.list.d/20ubiquiti.list
+RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" \
+  > /etc/apt/sources.list.d/ubiquiti.list
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 
 RUN apt-get -q update && \
-    apt-get install -qy --force-yes supervisor unifi-beta && \
+    apt-get install -qy --force-yes supervisor unifi && \
     apt-get -q clean && \
     rm -rf /var/lib/apt/lists/*
 
