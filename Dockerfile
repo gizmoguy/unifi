@@ -15,7 +15,7 @@ RUN apt-get -q update && \
     rm -rf /var/lib/apt/lists/*
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD system.properties /var/lib/unifi/system.properties
+ADD system.properties /usr/lib/unifi/data/system.properties
 
 WORKDIR /var/lib/unifi
 
