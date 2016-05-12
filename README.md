@@ -1,4 +1,4 @@
-## Valve Dockerfile
+## Unifi Dockerfile
 
 
 This directory contains **Dockerfile** of the beta version of [Ubiquiti's Unifi Controller](https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-4-6-3-is-released/ba-p/1215585) for [Docker](https://www.docker.com/).
