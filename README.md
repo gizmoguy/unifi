@@ -18,4 +18,4 @@ This directory contains **Dockerfile** of the beta version of [Ubiquiti's Unifi 
 
 ### Usage
 
-    docker run -d -p 80:80 -p 443:443 -d gizmoguy/unifi
+    docker run -d -p 80:8080 -p 443:8443 -d gizmoguy/unifi
