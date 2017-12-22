@@ -1,20 +1,16 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 VOLUME ["/var/lib/unifi"]
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo "deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti" \
+RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" \
   > /etc/apt/sources.list.d/100-ubnt.list
 
-RUN echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" \
-  > /etc/apt/sources.list.d/200-mongo.list
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 
 RUN apt-get -q update && \
-    apt-get install -qy --force-yes supervisor unifi && \
+    apt-get install -qy supervisor unifi && \
     apt-get -q clean && \
     rm -rf /var/lib/apt/lists/*
 
